@@ -1,7 +1,7 @@
 <template>
-  <div class="form-inline">
+  <form class="form-inline">
     <h3>Registro</h3>
-    <div class="form-grop">
+    <div class="form-group">
       <input
       id="email"
       type="text"
@@ -23,7 +23,7 @@
     <router-link to="/signin">Eres Usuario? Inicia Sesion</router-link>
     <p>{{error.message}}</p>
     <br>
-  </div>
+  </form>
 </template>
 
 <script>
@@ -44,7 +44,10 @@ import {firebase, firebaseApp} from '../firebaseApp'
           .catch(error=>{
             this.error = error
           })
-        }
+          setTimeout(window.location.href = '/#/signin ', 3000);
+
+        },
+      
       }
   }
 </script>

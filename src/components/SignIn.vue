@@ -1,7 +1,7 @@
 <template>
   <div class="form-inline">
     <h3>Inicia Sesion</h3>
-    <div class="form-grop">
+    <div class="form-group">
       <input
       id="email"
       type="text"
@@ -21,6 +21,8 @@
     </div>
     <br><br>
     <router-link to="/signup" >No estas registrado? Registrate Aqui</router-link>
+    <br><br>
+    <router-link to='forgotpass'>Olvidaste tu contraseña?</router-link>
     <p>{{error.message}}</p>
     <br>
   </div>
@@ -44,6 +46,7 @@ import {firebase, firebaseApp} from '../firebaseApp'
           .catch(error=>{
             this.error = error
           })
+          setTimeout(window.location.href = '/', 3000);
         }
       }
   }
@@ -64,4 +67,6 @@ import {firebase, firebaseApp} from '../firebaseApp'
       overflow: hidden;
       overflow-y: auto;
 }
+
+
 </style>
